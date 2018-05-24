@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      BMR-TDEE
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form  novalidate #myForm="ngForm" (ngSubmit)="showbmr(myForm.value)">
+    <ion-item class="input-item">
+      <ion-label floating>ส่วนสูง/เซนติเมตร</ion-label>
+      <ion-input ngModel name="hieght" type="number" required></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label floating>น้ำหนัก/กิโลกรัม</ion-label>
+      <ion-input ngModel name="wieght" type="number" required></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label floating>อายุ/ปี</ion-label>
+      <ion-input ngModel name="age" type="number" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>เพศ</ion-label>
+      <ion-select ngModel name="gender">
+        <ion-option value="f">หญิง</ion-option>
+        <ion-option value="m">ชาย</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>การออกกำลังกาย</ion-label>
+      <ion-select ngModel name="exer">
+        <ion-option value="1">ออกกำลังกายน้อยมากหรือไม่ออกเลย</ion-option>
+        <ion-option value="2">ออกกำลังกาย1-3ครั้ง/สัปดาห์</ion-option>
+        <ion-option value="3">ออกกำลังกาย4-5ครั้ง/สัปดาห์</ion-option>
+        <ion-option value="4">ออกกำลังกาย6-7ครั้ง/สัปดาห์</ion-option>
+        <ion-option value="5">ออกกำลังกาย6-7ครั้ง/สัปดาห์</ion-option>
+      </ion-select>
+    </ion-item>
+    <button [disabled]="myForm.invalid" ion-button large full>คำนวณ</button>
+  </form>
+</ion-content>

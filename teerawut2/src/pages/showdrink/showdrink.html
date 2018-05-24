@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>เครื่องดื่ม</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+<div>
+    <ion-list>
+        <ion-input ngModel type="hidden" name="foodtype" value="1" required></ion-input>
+        <ion-item *ngFor = " let item of beverageList">
+            <h4>ชื่อ            : {{item.foodname}}</h4>
+            <h4>ส่วนประกอบ     : {{item.fooddata}}</h4>
+        </ion-item>
+      </ion-list>
+</div>
+</ion-content>
